@@ -24,7 +24,7 @@ parameters:
 #    cluster_node03_address: ${_param:openstack_control_node03_address}
     nova_vncproxy_url: https://${_param:cluster_public_host}:6080
     primary_first_nic: enp9s0f0
-    primary_second_nic: ens11f0
+#    primary_second_nic: ens11f0
   linux:
     network:
       interface:
@@ -35,29 +35,33 @@ parameters:
           proto: manual
           name: ${_param:primary_first_nic}
 #          master: bond0
-        eth2:
-          mtu: 9000
-          enabled: true
-          type: slave
-          proto: manual
-          name: ${_param:primary_second_nic}
+#        eth2:
+#          mtu: 9000
+#          enabled: true
+#          type: slave
+#          proto: manual
+#          name: ${_param:primary_second_nic}
 #          master: bond0
         eth1.201:
-          name: ${_param:primary_second_nic}.${_param:control_vlan}
+#          name: ${_param:primary_second_nic}.${_param:control_vlan}
+          name: ${_param:primary_first_nic}.${_param:control_vlan}
           enabled: true
           proto: manual
           type: vlan
           use_interfaces:
-          - ${_param:primary_second_nic}
+#          - ${_param:primary_second_nic}
+          - ${_param:primary_first_nic}
         eth1.202:
-          name: ${_param:primary_second_nic}.${_param:tenant_vlan}
+#          name: ${_param:primary_second_nic}.${_param:tenant_vlan}
+          name: ${_param:primary_first_nic}.${_param:control_vlan}
           enabled: true
           proto: manual
           type: vlan
           address: ${_param:tenant_address}
           netmask: 255.255.255.0
           use_interfaces:
-          - ${_param:primary_second_nic}
+#          - ${_param:primary_second_nic}
+          - ${_param:primary_first_nic}
         br-mgmt:
           enabled: true
           type: bridge
@@ -76,7 +80,8 @@ parameters:
           address: ${_param:single_address}
           netmask: 255.255.255.0
           use_interfaces:
-          - ${_param:primary_second_nic}.${_param:control_vlan}
+#          - ${_param:primary_second_nic}.${_param:control_vlan}
+          - ${_param:primary_first_nic}.${_param:control_vlan}
         br-prv:
           enabled: true
           type: ovs_bridge

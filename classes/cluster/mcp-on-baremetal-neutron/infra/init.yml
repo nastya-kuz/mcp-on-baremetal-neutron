@@ -36,7 +36,7 @@ parameters:
     tenant_vlan: 202
 
     deploy_network_netmask: 255.255.255.0
-    deploy_network_gateway: 10.109.0.1
+    deploy_network_gateway: 10.109.9.1
 
     # MaaS parameters
     #infra_maas_node01_deploy_address: ${_param:infra_config_deploy_address}
@@ -45,10 +45,10 @@ parameters:
     #maas_admin_password: r00tme
     #maas_db_password: fRqC7NJrBR0x
     infra_kvm_address: 10.0.1.240
-    infra_kvm_node01_address: 10.109.1.2
+    infra_kvm_node01_address: 10.109.1.5
     #infra_kvm_node02_address: 10.0.1.242
     #infra_kvm_node03_address: 10.0.1.243
-    infra_kvm_node01_deploy_address: 10.109.9.5
+    infra_kvm_node01_deploy_address: 10.109.9.9
     #infra_kvm_node02_deploy_address: 10.0.0.242
     #infra_kvm_node03_deploy_address: 10.0.0.243
     infra_kvm_node01_hostname: kvm01

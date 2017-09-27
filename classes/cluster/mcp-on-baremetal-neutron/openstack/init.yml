@@ -115,13 +115,14 @@ parameters:
 #    openstack_gateway_node02_address: 10.0.1.225
 #    openstack_gateway_node03_address: 10.0.1.226
 
-    openstack_gateway_node01_tenant_address: 10.0.2.9
+    openstack_gateway_node01_tenant_address: 10.0.2.6
 #    openstack_gateway_node02_tenant_address: 10.0.2.7
 #    openstack_gateway_node03_tenant_address: 10.0.2.8
 
     # OpenStack Compute
     openstack_compute_rack01_single_subnet: 10.109.1
     openstack_compute_rack01_tenant_subnet: 10.0.2
+    openstack_compute_rack01_deploy_subnet: 10.109.9
     openstack_compute_rack01_hostname: cmp
 
     # openstack service hostnames

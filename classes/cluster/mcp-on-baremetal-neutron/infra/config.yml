@@ -92,11 +92,11 @@ parameters:
 #        openstack_control_node03:
 #          params:
 #            linux_system_codename: xenial
-        openstack_database_node01:
-          params:
-            linux_system_codename: xenial
-          classes:
-          - cluster.${_param:cluster_name}.openstack.database_init
+#        openstack_database_node01:
+#          params:
+#            linux_system_codename: xenial
+#          classes:
+#          - cluster.${_param:cluster_name}.openstack.database_init
 #        openstack_database_node02:
 #          params:
 #            linux_system_codename: xenial
@@ -126,13 +126,13 @@ parameters:
             params:
               single_address:
                 value: ${_param:openstack_compute_rack01_single_subnet}.<<count>>
-                start: 101
+                start: 2
               tenant_address:
                 value: ${_param:openstack_compute_rack01_tenant_subnet}.<<count>>
-                start: 101
+                start: 2
               deploy_address:
                 value: ${_param:openstack_compute_rack01_deploy_subnet}.<<count>>
-                start: 6
+                start: 5
           params:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: xenial
